@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Josh Abac | VA Bookkeeping Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest: #1a3a2e;
+    --forest-mid: #2a5040;
+    --forest-light: #3d6b57;
+    --cream: #f8f3eb;
+    --cream-dark: #ede5d5;
+    --gold: #c9972a;
+    --gold-light: #e4b84d;
+    --white: #ffffff;
+    --ink: #0e1f18;
+    --muted: #5a7a6e;
+    --font-display: 'Cormorant Garant', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 5%;
+    background: rgba(26, 58, 46, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,151,42,0.2);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(248,243,235,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--ink) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    color: var(--forest) !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--forest) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--forest);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,151,42,0.12);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -180px; left: 30%;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,151,42,0.08);
+  }
+
+  .hero-content {
+    padding: 10rem 5% 6rem 8%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-eyebrow span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  .hero-eyebrow::before { width: 32px; }
+  .hero-eyebrow::after { flex: 1; max-width: 60px; }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(248,243,235,0.65);
+    max-width: 440px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--forest);
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(248,243,235,0.35);
+    color: var(--cream);
+    padding: 0.875rem 2rem;
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); background: rgba(201,151,42,0.08); }
+
+  .hero-right {
+    padding: 10rem 8% 6rem 4%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,151,42,0.2);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: background 0.2s;
+  }
+
+  .stat-card:hover { background: rgba(201,151,42,0.08); }
+
+  .stat-icon {
+    width: 48px; height: 48px;
+    background: rgba(201,151,42,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stat-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(248,243,235,0.5);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .qbo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(201,151,42,0.35);
+    background: rgba(201,151,42,0.08);
+    color: var(--gold-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    width: fit-content;
+  }
+
+  .qbo-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 6rem 8%; }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-card-main {
+    background: var(--forest);
+    border-radius: 4px;
+    padding: 3rem;
+    color: var(--cream);
+  }
+
+  .avatar-ring {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(201,151,42,0.2);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-card-main h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .about-card-main .role {
+    font-size: 0.82rem;
+    color: rgba(248,243,235,0.55);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-card-main p {
+    font-size: 0.9rem;
+    color: rgba(248,243,235,0.7);
+    line-height: 1.75;
+  }
+
+  .about-card-float {
+    position: absolute;
+    bottom: -1.5rem; right: -1.5rem;
+    background: var(--gold);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    color: var(--forest);
+  }
+
+  .about-card-float .num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--forest);
+  }
+
+  .about-card-float .txt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .about-content .section-title { margin-bottom: 1.5rem; }
+
+  .about-content p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-size: 0.97rem;
+  }
+
+  .about-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .about-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--forest-mid);
+    font-weight: 500;
+  }
+
+  .about-list li::before {
+    content: '';
+    width: 18px; height: 18px;
+    background: rgba(201,151,42,0.15);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9972a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* ─── SERVICES ─── */
+  .services {
+    background: var(--cream);
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 2rem 2rem 2.25rem;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { border-color: rgba(201,151,42,0.3); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,58,46,0.08); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(26,58,46,0.06);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon svg { width: 24px; height: 24px; stroke: var(--forest); fill: none; stroke-width: 1.5; }
+
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* ─── WHY ME ─── */
+  .why {
+    background: var(--forest);
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-left .section-label { color: var(--gold); }
+  .why-left .section-label::before { background: var(--gold); }
+
+  .why-left .section-title { color: var(--cream); }
+
+  .why-left p {
+    font-size: 0.95rem;
+    color: rgba(248,243,235,0.6);
+    line-height: 1.8;
+    margin-top: 1.25rem;
+    font-weight: 300;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,151,42,0.15);
+    border-radius: 4px;
+    padding: 1.75rem 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .why-card:hover { background: rgba(201,151,42,0.07); }
+
+  .why-card-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(201,151,42,0.2);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card p {
+    font-size: 0.82rem;
+    color: rgba(248,243,235,0.5);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── TOOLS ─── */
+  .tools {
+    background: var(--white);
+    text-align: center;
+    padding: 4.5rem 8%;
+  }
+
+  .tools p {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .tools-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .tool-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--forest-mid);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .tool-badge:hover { opacity: 1; }
+
+  .tool-badge svg { width: 20px; height: 20px; fill: var(--forest); }
+
+  /* ─── CTA ─── */
+  .cta {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    text-align: center;
+    padding: 7rem 8%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,151,42,0.1);
+  }
+
+  .cta-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+
+  .cta .section-label { justify-content: center; }
+  .cta .section-label::before { display: none; }
+
+  .cta .section-title { color: var(--cream); margin-bottom: 1.25rem; }
+
+  .cta p {
+    color: rgba(248,243,235,0.6);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-info { }
+
+  .contact-info .section-title { margin-bottom: 1.25rem; }
+
+  .contact-info p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--forest-mid);
+  }
+
+  .contact-item-icon {
+    width: 40px; height: 40px;
+    background: rgba(26,58,46,0.07);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item-icon svg { width: 18px; height: 18px; stroke: var(--forest); fill: none; stroke-width: 1.5; }
+
+  .contact-form {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--cream-dark);
+    border-radius: 2px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--ink);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--forest);
+    background: var(--white);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--forest);
+    color: var(--cream);
+    border: none;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--forest-mid); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: rgba(248,243,235,0.45);
+    text-align: center;
+    padding: 2rem 8%;
+    font-size: 0.8rem;
+  }
+
+  footer strong { color: rgba(248,243,235,0.75); font-weight: 500; }
+  footer span { color: var(--gold); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1      { animation-delay: 0.25s; }
+  .hero-sub     { animation-delay: 0.4s; }
+  .hero-actions { animation-delay: 0.55s; }
+
+  .hero-right > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .hero-right > *:nth-child(1) { animation-delay: 0.3s; }
+  .hero-right > *:nth-child(2) { animation-delay: 0.45s; }
+  .hero-right > *:nth-child(3) { animation-delay: 0.6s; }
+  .hero-right > *:nth-child(4) { animation-delay: 0.75s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { padding: 1rem 8% 6rem; }
+    .about { grid-template-columns: 1fr; }
+    .why { grid-template-columns: 1fr; gap: 3rem; }
+    .contact { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .about-card-float { position: static; margin-top: 1rem; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4.5rem 6%; }
+    .why-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Samuel <span>Josh</span> Abac</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Me</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Virtual Bookkeeping</span>
+    </div>
+    <h1>Your Books,<br><em>Perfectly</em><br>Managed.</h1>
+    <p class="hero-sub">Expert QuickBooks Online bookkeeping for US small business owners — so you can focus on growing your business, not reconciling accounts.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a Free Consultation</a>
+      <a href="#services" class="btn-outline">See Services</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years with QuickBooks Online</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Remote & US-Focused</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">QBO</div>
+        <div class="stat-label">Certified Customer Support</div>
+      </div>
+    </div>
+    <div class="qbo-badge">QuickBooks Online Specialist</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-card-main">
+      <div class="avatar-ring">SJA</div>
+      <h3>Samuel Josh Abac</h3>
+      <div class="role">VA Bookkeeper &amp; QBO Specialist</div>
+      <p>With over 3 years of hands-on QuickBooks Online customer support experience, I bring deep platform expertise and a genuine passion for helping small business owners make sense of their finances.</p>
+    </div>
+    <div class="about-card-float">
+      <div class="num">3+</div>
+      <div class="txt">Years Experience</div>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">The Bookkeeper<br>Behind Your Business</h2>
+    <p>Hi, I'm Samuel! I started my career in QuickBooks Online customer service, where I helped hundreds of small business owners troubleshoot, organize, and understand their financials. Now I've taken that expertise and turned it into a full virtual bookkeeping service — built specifically for US small businesses like yours.</p>
+    <p>I know QBO inside and out — and I know the pain points that small business owners face. Let me take the books off your plate so you can focus on what you do best.</p>
+    <ul class="about-list">
+      <li>3+ years of QuickBooks Online expertise</li>
+      <li>Dedicated to US small business owners</li>
+      <li>Accurate, timely monthly reporting</li>
+      <li>Responsive, friendly communication</li>
+      <li>100% virtual — no office visits needed</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">Services Built for<br>Small Business Owners</h2>
+    </div>
+    <a href="#contact" class="btn-primary">Get a Free Quote</a>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <h3>Monthly Bookkeeping</h3>
+      <p>I categorize all transactions, reconcile your bank and credit card accounts, and deliver clean monthly financial statements every month — no more guessing where your money went.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <h3>QuickBooks Setup &amp; Cleanup</h3>
+      <p>Starting fresh or inheriting a messy QBO file? I'll set up your QuickBooks Online account properly or clean up months of disorganized data so everything is accurate and tax-ready.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3>Bank Reconciliation</h3>
+      <p>I match every transaction in QuickBooks against your bank statements to ensure your records are 100% accurate and any discrepancies are caught early.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Profit &amp; Loss Reports</h3>
+      <p>Understand exactly how your business is performing with clear, easy-to-read monthly Profit &amp; Loss and Balance Sheet reports delivered right to your inbox.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Accounts Payable &amp; Receivable</h3>
+      <p>Stay on top of what you owe and what's owed to you. I track and manage your invoices and bills so nothing slips through the cracks.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>Tax-Ready Financials</h3>
+      <p>When tax season rolls around, you won't be scrambling. I keep your books organized year-round so your accountant or CPA can file with confidence and speed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="why" id="why">
+  <div class="why-left">
+    <div class="section-label">Why Choose Me</div>
+    <h2 class="section-title">Expertise You<br>Can Trust</h2>
+    <p>I'm not just a bookkeeper — I'm a QBO specialist who has spent years inside the platform helping real businesses. When you hire me, you get someone who understands your tools as well as your numbers.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card-num">01</div>
+      <h4>QBO Deep Expertise</h4>
+      <p>Over 3 years working in QBO customer support means I know every corner of the platform — from setup to advanced reporting.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">02</div>
+      <h4>US Business Focused</h4>
+      <p>I serve US small business owners exclusively — I understand your tax environment, reporting needs, and compliance standards.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">03</div>
+      <h4>Always Responsive</h4>
+      <p>No waiting days for a reply. I keep communication clear, fast, and professional so you're never left in the dark about your finances.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">04</div>
+      <h4>Affordable Rates</h4>
+      <p>Virtual bookkeeping at a fraction of the cost of an in-house hire — without cutting corners on quality or accuracy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<div class="tools">
+  <p>Tools &amp; Platforms I Work With</p>
+  <div class="tools-row">
+    <div class="tool-badge">
+      <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13S23.2 3 16 3zm0 2c6.1 0 11 4.9 11 11s-4.9 11-11 11S5 22.1 5 16 9.9 5 16 5z"/></svg>
+      QuickBooks Online
+    </div>
+    <div class="tool-badge">
+      <svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="24" rx="3" ry="3"/></svg>
+      Microsoft Excel
+    </div>
+    <div class="tool-badge">
+      <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/></svg>
+      Google Sheets
+    </div>
+    <div class="tool-badge">
+      <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13S23.2 3 16 3z"/></svg>
+      Slack / Zoom
+    </div>
+    <div class="tool-badge">
+      <svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="24" rx="3"/></svg>
+      Google Drive
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="section-label">Ready to Get Started?</div>
+    <h2 class="section-title">Let's Clean Up<br>Your Books Today</h2>
+    <p>Schedule a free 30-minute consultation and I'll walk you through exactly how I can help you get organized, stay accurate, and feel confident about your finances.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn-primary">Book Free Consultation</a>
+      <a href="mailto:samuel@example.com" class="btn-outline">Send Me an Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's Work<br>Together</h2>
+    <p>Reach out today and let's talk about how I can take bookkeeping off your plate. I respond within 24 hours, Monday through Friday.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Email</div>
+          <div style="color:var(--forest);font-weight:500;">samuel@example.com</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Phone / WhatsApp</div>
+          <div style="color:var(--forest);font-weight:500;">+1 (xxx) xxx-xxxx</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">LinkedIn</div>
+          <div style="color:var(--forest);font-weight:500;">linkedin.com/in/samuelabac</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div style="margin-bottom:1.75rem;">
+      <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--forest);margin-bottom:0.25rem;">Send Me a Message</div>
+      <div style="font-size:0.82rem;color:var(--muted);">I'll get back to you within 24 hours.</div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Jane">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Smith">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="jane@yourbusiness.com">
+    </div>
+    <div class="form-group">
+      <label>Business Type</label>
+      <select>
+        <option value="">Select your business type...</option>
+        <option>Sole Proprietor / Freelancer</option>
+        <option>LLC</option>
+        <option>S-Corp / C-Corp</option>
+        <option>Partnership</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>How can I help?</label>
+      <textarea placeholder="Tell me a bit about your bookkeeping needs or challenges..."></textarea>
+    </div>
+    <button class="form-submit">Send Message →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 <strong>Samuel Josh Abac</strong> — VA Bookkeeping Services. Built for <span>US Small Business Owners</span>.</p>
+</footer>
+
+</body>
+</html>
