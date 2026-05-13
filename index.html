@@ -683,20 +683,51 @@
     align-items: center;
     gap: 1rem;
     font-size: 0.9rem;
-    color: var(--forest-mid);
+    color: var(--cream);
+    background: var(--forest);
+    border: 1px solid rgba(201,151,42,0.22);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+    cursor: default;
+  }
+
+  .contact-item::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201,151,42,0.08), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+
+  .contact-item:hover::after { left: 100%; }
+
+  .contact-item:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 36px rgba(45,106,79,0.35) !important;
+    border-color: rgba(201,151,42,0.5) !important;
   }
 
   .contact-item-icon {
-    width: 40px; height: 40px;
-    background: rgba(26,58,46,0.07);
+    width: 42px; height: 42px;
+    background: rgba(201,151,42,0.15);
+    border: 1px solid rgba(201,151,42,0.25);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: background 0.25s ease;
   }
 
-  .contact-item-icon svg { width: 18px; height: 18px; stroke: var(--forest); fill: none; stroke-width: 1.5; }
+  .contact-item:hover .contact-item-icon {
+    background: rgba(201,151,42,0.28);
+  }
+
+  .contact-item-icon svg { width: 18px; height: 18px; stroke: var(--gold-light); fill: none; stroke-width: 1.6; }
 
   .contact-form {
     background: var(--white);
@@ -803,6 +834,259 @@
   .hero-right > *:nth-child(3) { animation-delay: 0.6s; }
   .hero-right > *:nth-child(4) { animation-delay: 0.75s; }
 
+
+  /* ─── SHIMMER LOADER ─── */
+  #page-loader {
+    position: fixed; inset: 0; z-index: 9998;
+    background: var(--forest);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 1.5rem;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  #page-loader.hidden { opacity: 0; visibility: hidden; }
+
+  .loader-inner {
+    width: min(460px, 88vw);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  .sk-row { display: flex; gap: 14px; align-items: center; }
+
+  .sk {
+    background: linear-gradient(90deg,
+      rgba(255,255,255,0.05) 25%,
+      rgba(255,255,255,0.11) 50%,
+      rgba(255,255,255,0.05) 75%);
+    background-size: 200% 100%;
+    animation: sk-shimmer 1.5s infinite;
+    border-radius: 6px;
+  }
+
+  @keyframes sk-shimmer { to { background-position: -200% 0; } }
+
+  .sk-circle { width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0; }
+  .sk-lines  { flex: 1; display: flex; flex-direction: column; gap: 9px; }
+  .sk-line   { height: 11px; border-radius: 5px; }
+  .sk-block  { height: 44px; border-radius: 8px; }
+  .sk-short  { height: 11px; width: 40%; border-radius: 5px; }
+  .sk-btn-row{ display: flex; gap: 10px; }
+  .sk-btn    { height: 36px; width: 140px; border-radius: 3px; }
+
+  .loader-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: rgba(248,243,235,0.35);
+    letter-spacing: 0.04em;
+  }
+
+  .loader-logo span { color: var(--gold); }
+
+  /* ─── FLOATING CARDS ─── */
+  .float-cards-wrap {
+    position: relative;
+  }
+
+  .floating-card {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,151,42,0.22);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    width: fit-content;
+    animation: float-bob 3.5s ease-in-out infinite;
+  }
+
+  .floating-card:nth-child(2) {
+    animation-name: float-bob2;
+    animation-delay: 0.6s;
+  }
+
+  @keyframes float-bob  { 0%,100%{transform:translateY(0)}    50%{transform:translateY(-8px)} }
+  @keyframes float-bob2 { 0%,100%{transform:translateY(-4px)} 50%{transform:translateY(4px)}  }
+
+  .fc-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(201,151,42,0.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fc-icon svg { width: 18px; height: 18px; stroke: var(--gold-light); fill: none; stroke-width: 1.8; }
+
+  .fc-title { font-size: 0.82rem; font-weight: 600; color: var(--cream); margin-bottom: 1px; }
+  .fc-sub   { font-size: 0.72rem; color: rgba(248,243,235,0.45); }
+
+  /* ─── TYPING TEXT ─── */
+  .typing-line {
+    font-size: 1.05rem;
+    color: rgba(248,243,235,0.65);
+    max-width: 440px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    min-height: 3.3em;
+  }
+
+  .type-cursor {
+    display: inline-block;
+    width: 2px; height: 1em;
+    background: var(--gold-light);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: cur-blink 0.85s step-end infinite;
+  }
+
+  @keyframes cur-blink { 50% { opacity: 0; } }
+
+  /* ─── ENHANCED BUTTON HOVER ─── */
+  .btn-primary {
+    position: relative; overflow: hidden;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    transition: left 0.45s ease;
+  }
+
+  .btn-primary:hover::after { left: 100%; }
+  .btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 28px rgba(201,151,42,0.4) !important;
+  }
+  .btn-primary:active { transform: scale(0.97) !important; }
+
+  .btn-outline {
+    transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold) !important;
+    background: rgba(201,151,42,0.08) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 20px rgba(201,151,42,0.15) !important;
+  }
+  .btn-outline:active { transform: scale(0.97) !important; }
+
+  .nav-cta {
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+  }
+  .nav-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(201,151,42,0.35) !important;
+  }
+
+
+  /* ─── UNIVERSAL CARD HOVER LIFT ─── */
+  .stat-card,
+  .service-card,
+  .why-card,
+  .about-card-main,
+  .contact-item,
+  .contact-form,
+  .tool-badge,
+  .qbo-badge,
+  .floating-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.2s ease !important;
+    cursor: default;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.18) !important;
+    border-color: rgba(201,151,42,0.45) !important;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 14px 40px rgba(26,58,46,0.13) !important;
+    border-color: rgba(201,151,42,0.35) !important;
+  }
+
+  .why-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.2) !important;
+    border-color: rgba(201,151,42,0.3) !important;
+  }
+
+  .about-card-main:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2) !important;
+  }
+
+  /* contact-item hover handled in contact-item block above */
+
+  .contact-form:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 48px rgba(26,58,46,0.1) !important;
+    border-color: rgba(201,151,42,0.25) !important;
+  }
+
+  .tool-badge:hover {
+    transform: translateY(-3px) !important;
+  }
+
+  .qbo-badge:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+    border-color: rgba(201,151,42,0.6) !important;
+    background: rgba(201,151,42,0.14) !important;
+  }
+
+  /* service card shimmer sweep on hover */
+  .service-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201,151,42,0.06), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+
+  .service-card:hover::after { left: 100%; }
+
+  /* why-card accent bar on hover */
+  .why-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .why-card:hover::before { transform: scaleY(1); }
+
+  /* stat-card icon glow on hover */
+  .stat-card:hover .stat-icon {
+    background: rgba(201,151,42,0.28) !important;
+    transition: background 0.25s ease;
+  }
+
+  /* about-card avatar glow */
+  .about-card-main:hover .avatar-ring,
+  .about-card-main:hover .linkedin-avatar-wrap {
+    box-shadow: 0 0 0 4px rgba(201,151,42,0.3) !important;
+    transition: box-shadow 0.25s ease;
+  }
+
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -823,6 +1107,26 @@
 </head>
 <body>
 
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo">Samuel <span>Josh</span> Abac</div>
+  <div class="loader-inner">
+    <div class="sk-row">
+      <div class="sk sk-circle"></div>
+      <div class="sk-lines">
+        <div class="sk sk-line" style="width:55%"></div>
+        <div class="sk sk-line" style="width:75%"></div>
+      </div>
+    </div>
+    <div class="sk sk-block"></div>
+    <div class="sk sk-block" style="height:30px;width:65%"></div>
+    <div class="sk-btn-row">
+      <div class="sk sk-btn"></div>
+      <div class="sk sk-btn" style="width:110px"></div>
+    </div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Samuel <span>Josh</span> Abac</div>
@@ -841,7 +1145,7 @@
       <span>Virtual Bookkeeping</span>
     </div>
     <h1>Your Books,<br><em>Perfectly</em><br>Managed.</h1>
-    <p class="hero-sub">Expert QuickBooks Online bookkeeping for US small business owners — so you can focus on growing your business, not reconciling accounts.</p>
+    <p class="typing-line"><span id="hero-typed"></span><span class="type-cursor"></span></p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Book a Free Consultation</a>
       <a href="#services" class="btn-outline">See Services</a>
@@ -874,6 +1178,26 @@
       <div>
         <div class="stat-num">QBO</div>
         <div class="stat-label">Certified Customer Support</div>
+      </div>
+    </div>
+    <div class="float-cards-wrap" style="display:flex;flex-direction:column;gap:0.75rem;">
+      <div class="floating-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <div class="fc-title">QBO Specialist</div>
+          <div class="fc-sub">3+ years hands-on experience</div>
+        </div>
+      </div>
+      <div class="floating-card">
+        <div class="fc-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <div class="fc-title">Available for US Clients</div>
+          <div class="fc-sub">Small business owners welcome</div>
+        </div>
       </div>
     </div>
     <div class="qbo-badge">QuickBooks Online Specialist</div>
@@ -1082,8 +1406,8 @@
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div>
-          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Email</div>
-          <div style="color:var(--forest);font-weight:500;">Samuelabac.Bookkeeping@gmail.com</div>
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,243,235,0.5);margin-bottom:2px;">Email</div>
+          <div style="color:var(--cream);font-weight:500;">Samuelabac.Bookkeeping@gmail.com</div>
         </div>
       </div>
       <div class="contact-item">
@@ -1091,8 +1415,8 @@
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <div>
-          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">Phone / WhatsApp</div>
-          <div style="color:var(--forest);font-weight:500;">+1 (xxx) xxx-xxxx</div>
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,243,235,0.5);margin-bottom:2px;">Phone / WhatsApp</div>
+          <div style="color:var(--cream);font-weight:500;">+1 (xxx) xxx-xxxx</div>
         </div>
       </div>
       <div class="contact-item">
@@ -1100,9 +1424,9 @@
           <svg viewBox="0 0 24 24"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/></svg>
         </div>
         <div>
-          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">LinkedIn</div>
-          <div style="color:var(--forest);font-weight:500;">
-  <a href="https://www.linkedin.com/in/samuel-josh-abac-4ba441407/" target="_blank">
+          <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,243,235,0.5);margin-bottom:2px;">LinkedIn</div>
+          <div style="color:var(--cream);font-weight:500;">
+  <a href="https://www.linkedin.com/in/samuel-josh-abac-4ba441407/" style="color:var(--gold-light);text-decoration:none;" target="_blank">
     https://www.linkedin.com/in/samuel-josh-abac/
   </a>
 </div>
@@ -1235,5 +1559,33 @@
     else { showErrorModal(); }
   });
 </script>
+
+<script>
+  /* ── Shimmer loader ── */
+  window.addEventListener('load', function() {
+    const loader = document.getElementById('page-loader');
+    setTimeout(function() { loader.classList.add('hidden'); }, 1200);
+  });
+
+  /* ── Typing animation — types once, stops, cursor hides ── */
+  const finalText = "Expert QuickBooks Online bookkeeping for US small business owners — so you can focus on growing your business, not reconciling accounts.";
+  let ci = 0;
+  const typedEl = document.getElementById('hero-typed');
+  const cursorEl = document.querySelector('.type-cursor');
+
+  function typeHero() {
+    if (!typedEl) return;
+    typedEl.textContent = finalText.slice(0, ++ci);
+    if (ci === finalText.length) {
+      if (cursorEl) {
+        setTimeout(function() { cursorEl.style.display = 'none'; }, 1000);
+      }
+      return;
+    }
+    setTimeout(typeHero, 42);
+  }
+  setTimeout(typeHero, 1600);
+</script>
+
   </body>
   </html>
