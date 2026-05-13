@@ -1122,7 +1122,64 @@
         <label>First Name</label>
         <input type="text" name="first_name" placeholder="Jane" required>
       </div>
+      <div class="contact-form">
+  <form action="https://formspree.io/f/xjglzrpa" method="POST">
+
+    <div style="margin-bottom:1.75rem;">
+      <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--forest);margin-bottom:0.25rem;">
+        Send Me a Message
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);">
+        I'll get back to you within 24 hours.
+      </div>
+    </div>
+
+    <div class="form-row">
       <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="first_name" placeholder="Jane" required>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="last_name" placeholder="Smith" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="jane@yourbusiness.com" required>
+    </div>
+
+    <div class="form-group">
+      <label>Business Type</label>
+      <select name="business_type">
+        <option value="">Select your business type...</option>
+        <option>Sole Proprietor / Freelancer</option>
+        <option>LLC</option>
+        <option>S-Corp / C-Corp</option>
+        <option>Partnership</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>How can I help?</label>
+      <textarea name="message" placeholder="Tell me a bit about your bookkeeping needs or challenges..." required></textarea>
+    </div>
+
+    <!-- Prevent spam bots -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- Optional: Redirect back to your site -->
+    <input type="hidden" name="_redirect" value="https://sharklover0625.github.io/#contact">
+
+    <button type="submit" class="form-submit">
+      Send Message →
+    </button>
+
+  </form>
+</div>
         <label>Last Name</label>
         <input type="text" placeholder="Smith">
       </div>
